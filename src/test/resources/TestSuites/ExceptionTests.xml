@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="LoginTest" verbose="1" >
+    <test name="ExceptionTest" >
+        <classes>
+            <class name="com.herokuapp.theinternet.ExceptionTest"/>
+            <methods>
+                <exclude name="notVisibleTest" />
+                <exclude name="noSuchElementTest"></exclude>
+            </methods>
+        </classes>
+    </test>
+</suite>
