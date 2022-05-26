@@ -7,6 +7,7 @@
             <methods>
                 <exclude name="notVisibleTest" />
                 <exclude name="noSuchElementTest"></exclude>
+                <exclude name="staleElementTest"></exclude>
             </methods>
         </classes>
     </test>

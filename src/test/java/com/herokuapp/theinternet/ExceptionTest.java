@@ -133,4 +133,29 @@ public class ExceptionTest {
         Assert.assertTrue(checkbox.isDisplayed());
 
     }
+
+    @Test
+    private void disableElementTest(){
+
+//        Go to URL
+        driver.get("https://the-internet.herokuapp.com/dynamic_controls");
+
+//        Click to enable input field
+        WebElement button = driver.findElement(By.xpath("//button[contains(text(),'Enable')]"));
+        button.click();
+
+//        Create WebElement for Input
+        WebElement inputField;
+
+//        Wait for the input to Enable
+        WebDriverWait waitForInput = new WebDriverWait(driver,Duration.ofSeconds(10));
+        inputField= waitForInput.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='input-example']/input")));
+        Assert.assertTrue(inputField.isEnabled(),"Input Field is not Enable");
+
+//        Click and Write Text on the Input field
+        inputField.click();
+        inputField.sendKeys("Example Text");
+        Assert.assertEquals(inputField.getAttribute("value"),"Example Text", "Text different from expected");
+
+    }
 }
